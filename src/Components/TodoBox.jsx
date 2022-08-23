@@ -4,11 +4,11 @@ import TodoHeader from "./TodoHeader";
 import TodoBody from "./TodoBody";
 import TodoCreate from "./TodoCreate";
 
-export default function TodoBox() {
+export default function TodoBox({ todo }) {
   return (
     <Container>
       <TodoHeader />
-      <TodoBody />
+      <TodoBody todo={todo} />
       <TodoCreate />
     </Container>
   );
