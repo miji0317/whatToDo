@@ -7,24 +7,25 @@ import TodoBox from "./Components/TodoBox";
 function App() {
   const [todo, setTodo] = useState([]);
 
+  async function getTodo() {
+    try {
+      const response = await axios.get("http://localhost:3333/todo");
+      console.log(response.data);
+      setTodo(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
-    const getData = async () => {
-      try {
-        const result = await axios.get("http://localhost:5000/todo");
-        console.log(result.data);
-        setTodo(result.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getData();
+    getTodo();
   }, []);
 
   return (
     todo && (
       <>
         <GlobalStyle />
-        <TodoBox todo={todo} />
+        <TodoBox todo={todo} getTodo={getTodo} />
       </>
     )
   );

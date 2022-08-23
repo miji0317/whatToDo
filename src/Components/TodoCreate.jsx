@@ -1,11 +1,33 @@
-import React from "react";
+import { React, useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
-export default function TodoCreate() {
+export default function TodoCreate({ getTodo }) {
+  const [inputTodo, setInputTodo] = useState("");
+
+  async function postTodo(inputTodo) {
+    try {
+      const response = await axios.post("http://localhost:3333/todo", {
+        text: inputTodo,
+        done: false,
+      });
+      console.log(response);
+      getTodo();
+      setInputTodo("");
+      document.getElementById("input-todo").value = null;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <CreateContainer>
-      <InputBox placeholder="할 일을 입력하세요"></InputBox>
-      <InputBtn>추가</InputBtn>
+      <InputBox
+        id="input-todo"
+        placeholder="할 일을 입력하세요"
+        onChange={(e) => setInputTodo(e.target.value)}
+      ></InputBox>
+      <CreateBtn onClick={(e) => postTodo(inputTodo)}>추가</CreateBtn>
     </CreateContainer>
   );
 }
@@ -28,7 +50,7 @@ const InputBox = styled.input`
   }
 `;
 
-const InputBtn = styled.div`
+const CreateBtn = styled.div`
   width: 20%;
   border-radius: 10px;
   background-color: #ffb3b3;
@@ -36,6 +58,7 @@ const InputBtn = styled.div`
   text-align: center;
   padding: 5px;
   transition: all 0.3s;
+  cursor: pointer;
 
   &:hover {
     box-shadow: 2px 2px 4px -1px #d2d2d2;

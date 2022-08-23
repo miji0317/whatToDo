@@ -1,20 +1,43 @@
-import React from "react";
+import { React, useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 import { HiCheckCircle, HiOutlineCheckCircle } from "react-icons/hi";
 import { MdDelete } from "react-icons/md";
 
 export default function TodoItem({ id, done, text }) {
+  const [item, setItem] = useState({ id: id, done: done, text: text });
+
+  // async function clickDone(item) {
+  //   try {
+  //     res = await axios.PUT(`http://localhost:5000/todo/${item.id}`, {
+  //       id: item.key,
+  //       text: item.text,
+  //       done: !item.done,
+  //     });
+  //     console.log(res);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+
   return (
     <TodoList>
-      {done ? (
-        <HiCheckCircle color="#FFB3B3" size={"20px"} cursor={"pointer"} />
-      ) : (
-        <HiOutlineCheckCircle
-          color="#ced4da"
-          size={"20px"}
-          cursor={"pointer"}
-        />
-      )}
+      <Done
+      // onClick={(e) => {
+      //   // clickDone(e.target.value);
+      //   console.log(e.target.id);
+      // }}
+      >
+        {done ? (
+          <HiCheckCircle color="#FFB3B3" size={"20px"} cursor={"pointer"} />
+        ) : (
+          <HiOutlineCheckCircle
+            color="#ced4da"
+            size={"20px"}
+            cursor={"pointer"}
+          />
+        )}
+      </Done>
       <Text done={done}>{text}</Text>
       <Remove>
         <MdDelete size={"20px"} />
@@ -29,6 +52,8 @@ const TodoList = styled.div`
   padding-top: 12px;
   padding-bottom: 12px;
 `;
+
+const Done = styled.div``;
 
 const Text = styled.div`
   flex: 1;

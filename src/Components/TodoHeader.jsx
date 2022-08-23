@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function TodoHeader() {
+export default function TodoHeader({ todo }) {
   const date = new Date();
 
   const year = date.getFullYear();
@@ -13,7 +13,7 @@ export default function TodoHeader() {
   return (
     <Head>
       <h3>{today}</h3>
-      <div className="todo">할 일이 n개 남아있습니다.</div>
+      <div className="todo">등록된 할 일 {todo.length}가지</div>
     </Head>
   );
 }

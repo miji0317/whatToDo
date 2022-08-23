@@ -10,7 +10,12 @@ export default function TodoBody({ todo }) {
           <div>등록된 할 일이 없습니다.</div>
         ) : (
           todo.map((item) => (
-            <TodoItem key={item.id} text={item.text} done={item.done} />
+            <TodoItem
+              key={item.id}
+              id={item.id}
+              text={item.text}
+              done={item.done}
+            />
           ))
         )}
       </Body>
