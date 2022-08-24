@@ -5,13 +5,13 @@ import axios from "axios";
 export default function TodoCreate({ getTodo }) {
   const [inputTodo, setInputTodo] = useState("");
 
+  // 할 일 추가
   async function postTodo(inputTodo) {
     try {
       const response = await axios.post("http://localhost:3333/todo", {
         text: inputTodo,
         done: false,
       });
-      console.log(response);
       getTodo();
       setInputTodo("");
       document.getElementById("input-todo").value = null;
@@ -41,7 +41,7 @@ const CreateContainer = styled.div`
 const InputBox = styled.input`
   width: 70%;
   border-radius: 10px;
-  border: 1px solid #ced4da;
+  border: 1px solid #d4d4d4;
   padding: 5px;
 
   &:focus {

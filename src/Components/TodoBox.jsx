@@ -8,7 +8,7 @@ export default function TodoBox({ todo, getTodo }) {
   return (
     <Container>
       <TodoHeader todo={todo} />
-      <TodoBody todo={todo} />
+      <TodoBody todo={todo} getTodo={getTodo} />
       <TodoCreate getTodo={getTodo} />
     </Container>
   );
