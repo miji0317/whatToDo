@@ -35,25 +35,17 @@ export default function TodoBody({ todo, getTodo }) {
         ) : (
           todo.map((item) => (
             <TodoItem key={item.id}>
-              <div
+              <Done
                 id={item.id}
                 done={item.done}
                 onClick={(e) => doneTodo(item.id, item.done)}
               >
                 {item.done ? (
-                  <HiCheckCircle
-                    color="#FFB3B3"
-                    size={"20px"}
-                    cursor={"pointer"}
-                  />
+                  <HiCheckCircle color="#FFB3B3" size={"20px"} />
                 ) : (
-                  <HiOutlineCheckCircle
-                    color="#d4d4d4"
-                    size={"20px"}
-                    cursor={"pointer"}
-                  />
+                  <HiOutlineCheckCircle color="#d4d4d4" size={"20px"} />
                 )}
-              </div>
+              </Done>
 
               <Text done={item.done}>{item.text}</Text>
 
@@ -90,6 +82,13 @@ const TodoItem = styled.div`
       color: #ff6b6b;
     }
   }
+`;
+
+const Done = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 `;
 
 const Text = styled.div`

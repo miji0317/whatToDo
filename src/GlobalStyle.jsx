@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     width: 100%;
     min-height: 100vh;
-    background: #e9ecef;
+    background: #eeeeee;
     display: flex;
     align-items: center;
     justify-content: center;

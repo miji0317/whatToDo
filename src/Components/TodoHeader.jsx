@@ -12,7 +12,8 @@ export default function TodoHeader({ todo }) {
 
   return (
     <Head>
-      <h3>{today}</h3>
+      <div className="date">{today}</div>
+      <h3>What To Do✍🏻</h3>
       <div className="todo">등록된 할 일 {todo.length}가지</div>
     </Head>
   );
@@ -23,16 +24,21 @@ const Head = styled.div`
   border-bottom: 1px solid #e9ecef;
   font-family: "yg-jalnan";
 
+  .date {
+    text-align: right;
+    font-size: 14px;
+    color: #797a7e;
+  }
+
   h3 {
     margin: 0px;
     font-size: 36px;
-    color: 343a40;
+    color: #ffb3b3;
   }
 
   .todo {
-    color: #ffb3b3;
+    color: #797a7e;
     font-size: 18px;
     margin-top: 20px;
-    font-weight: bold;
   }
 `;
