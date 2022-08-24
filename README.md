@@ -2,7 +2,7 @@
 
 - 주제: To Do List
 <br/>
-<img src="https://user-images.githubusercontent.com/73158122/186386100-ded5232e-c856-4617-9361-045047ddfb99.gif" width="50%" />
+<img src="https://user-images.githubusercontent.com/73158122/186386100-ded5232e-c856-4617-9361-045047ddfb99.gif" width="60%" />
 
 <br/>
 
