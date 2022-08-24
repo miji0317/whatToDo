@@ -2,7 +2,8 @@
 
 - 주제: To Do List
 <br/>
-<img src="https://user-images.githubusercontent.com/73158122/186381142-167f1ada-d6bf-4771-a06b-35ca2be830e2.gif" width="50%" />
+<img src="https://user-images.githubusercontent.com/73158122/186386100-ded5232e-c856-4617-9361-045047ddfb99.gif" width="50%" />
+
 <br/>
 
 - 제작 기간: 22.08.23 ~ 22.08.24
